@@ -18,7 +18,7 @@ namespace QuizApp.iOS
 
             string dbPath = Path.Combine(libFolder, filename);
 
-            CopyDatabaseIfNotExists(dbPath);
+            //CopyDatabaseIfNotExists(dbPath);
 
             return dbPath;
         }

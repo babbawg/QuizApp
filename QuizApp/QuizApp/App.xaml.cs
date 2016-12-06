@@ -5,27 +5,48 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using QuizApp.Helpers;
 
 namespace QuizApp
 {
     public partial class App : Application
     {
         public static QuizRepository QuizRepo { get; private set; }
+		public static App Current;
 
         public App()
         {
             InitializeComponent();
-
-            MainPage = new QuizApp.MainPage();
+			Current = this;
         }
 
         public App(string dbPath, ISQLitePlatform sqlitePlatform)
         {
+			Current = this;
+
             //set database path first, then retrieve main page
             QuizRepo = new QuizRepository(sqlitePlatform, dbPath);
 
-            this.MainPage = new MainPage();
+			//this.MainPage = new MainPage();
+
+			if (Settings.IsFirstStart)
+				MainPage = new SettingsPage();
+			else
+				this.OpenQuiz();
+
         }
+
+		public void OpenQuiz()
+		{
+			MainPage = new NavigationPage(new MainPage());
+		}
+
+		public void OpenAdminPage()
+		{
+			MainPage = new NavigationPage(new AdminPage());
+		}
+
+
 
         protected override void OnStart()
         {

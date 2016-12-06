@@ -71,8 +71,15 @@ namespace QuizApp
             return quitzs;
         }
 
+		public async Task<Quiz> GetCurrentQuizAsync()
+		{
+			//return a list of people saved to the Person table in the database
+			Quiz quitz = await dbConn.Table<Quiz>().OrderByDescending(q => q.DteEnd).FirstOrDefaultAsync();
+			return quitz;
+		}
 
-        public async Task AddNewUserAsync(string name)
+
+		public async Task AddNewUserAsync(string name)
         {
             int result = 0;
             try

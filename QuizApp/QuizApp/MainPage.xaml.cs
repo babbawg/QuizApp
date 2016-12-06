@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuizApp.Helpers;
 using Xamarin.Forms;
 
 namespace QuizApp
@@ -15,23 +16,41 @@ namespace QuizApp
             InitializeComponent();
         }
 
-        public async void OnNewButtonClicked(object sender, EventArgs args)
-        {
-            statusMessage.Text = "";
+		public async void OnAdminClicked(object sender, System.EventArgs e)
+		{
+			await Navigation.PushModalAsync(new AdminLoginPage(), true);
+		}
 
-            await App.QuizRepo.AddNewQuizAsync(newQuiz.Text, "des...", "Mia domanda", "44", DateTime.Now, DateTime.Now.AddDays(7));
-            statusMessage.Text = App.QuizRepo.StatusMessage;
-        }
+		protected async override void OnAppearing()
+		{
+			base.OnAppearing();
 
-        public async void OnGetButtonClicked(object sender, EventArgs args)
-        {
-            statusMessage.Text = "";
+			QuizApp.Model.Quiz quiz = await App.QuizRepo.GetCurrentQuizAsync();
+			if (quiz != null)
+			{
+				lblQuizDate.Text = quiz.DteEnd.ToString();
+				lblQuizTitle.Text = quiz.Name;
+				lblQuizDescription.Text = quiz.Description;
+			}
+		}
 
-            List<Model.Quiz> qList = await App.QuizRepo.GetAllQuizAsync();
+        //public async void OnNewButtonClicked(object sender, EventArgs args)
+        //{
+        //    statusMessage.Text = "";
 
-            ObservableCollection<Model.Quiz> pplCollection = new ObservableCollection<Model.Quiz>(qList);
-            quizList.ItemsSource = pplCollection;
-        }
+        //    await App.QuizRepo.AddNewQuizAsync(newQuiz.Text, "des...", "Mia domanda", "44", DateTime.Now, DateTime.Now.AddDays(7));
+        //    statusMessage.Text = App.QuizRepo.StatusMessage;
+        //}
+
+        //public async void OnGetButtonClicked(object sender, EventArgs args)
+        //{
+        //    statusMessage.Text = "";
+
+        //    List<Model.Quiz> qList = await App.QuizRepo.GetAllQuizAsync();
+
+        //    ObservableCollection<Model.Quiz> pplCollection = new ObservableCollection<Model.Quiz>(qList);
+        //    quizList.ItemsSource = pplCollection;
+        //}
 
     }
 }

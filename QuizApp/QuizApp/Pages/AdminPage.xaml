@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QuizApp.AdminPage">
+	<ContentPage.Content>
+
+		<StackLayout Orientation="Vertical" Padding="30">
+		  	<Label HorizontalOptions="StartAndExpand" Text="Amministrazione" />
+		  	<Button x:Name="btnQuizList" HorizontalOptions="Start" Text="Elenco quiz" Clicked="OnQuizListClicked" />
+		  	<Button x:Name="btnSettings" HorizontalOptions="Start" Text="Settings" Clicked="OnSettingsClicked" />
+		  	<Button x:Name="btnLogout" HorizontalOptions="End" Text="Logout" Clicked="OnLogoutClicked" />
+		</StackLayout>
+		
+	</ContentPage.Content>
+</ContentPage>

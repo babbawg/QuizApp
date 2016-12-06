@@ -1,20 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:QuizApp"
-             x:Class="QuizApp.MainPage">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QuizApp.AdminQuizList">
+	<ContentPage.Content>
 
-
-<StackLayout Orientation="Vertical" Padding="30">
-  	<Label HorizontalOptions="StartAndExpand" Text="Il gioco di oggi:" />
-  	<Label x:Name="lblQuizDate" HorizontalOptions="StartAndExpand" Text="" />
-  	<Label x:Name="lblQuizTitle" HorizontalOptions="StartAndExpand" Text="" />
-  	<Label x:Name="lblQuizDescription" HorizontalOptions="StartAndExpand" Text="" />
-  	<Button x:Name="btnAdmin" VerticalOptions="End" HorizontalOptions="End" Text="Admin" Clicked="OnAdminClicked" />
-</StackLayout>
-	
-	
-<!--  <Grid Padding="20" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Default">
+  <Grid Padding="30" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Default">
 
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -47,6 +35,6 @@
     </ListView>
 
   </Grid>
--->
-
+		
+	</ContentPage.Content>
 </ContentPage>

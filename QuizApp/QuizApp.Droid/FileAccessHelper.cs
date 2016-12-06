@@ -11,7 +11,7 @@ namespace QuizApp.Droid
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string dbPath = Path.Combine(path, filename);
             
-            CopyDatabaseIfNotExists(dbPath);
+            //CopyDatabaseIfNotExists(dbPath);
 
             return dbPath;
         }

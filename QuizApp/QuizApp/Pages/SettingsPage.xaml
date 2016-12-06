@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QuizApp.SettingsPage">
+	<ContentPage.Content>
+
+		<StackLayout Orientation="Vertical" Padding="30">
+		  	<Label HorizontalOptions="StartAndExpand" Text="Configurazione" />
+			<Entry x:Name="txtUserName" Placeholder="UserName dell'amministratore" />
+			<Entry x:Name="txtPwd" Placeholder="Password dell'amministratore" />
+		  	<Button x:Name="btnSave" HorizontalOptions="End" Text="Salva" Clicked="OnSaveClicked" />
+		</StackLayout>
+		
+	</ContentPage.Content>
+</ContentPage>
