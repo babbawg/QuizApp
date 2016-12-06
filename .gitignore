@@ -3,3 +3,11 @@
 ################################################################################
 
 /QuizApp/QuizApp/obj/Debug
+/QuizApp/QuizApp/bin/Debug
+/QuizApp/QuizApp.Droid/obj/Debug
+/QuizApp/QuizApp.iOS/obj/iPhoneSimulator/Debug
+/QuizApp/QuizApp.iOS/bin/iPhoneSimulator/Debug
+/QuizApp/QuizApp.UWP/obj/x86/Debug
+/.vs/QuizApp/v14
+/packages
+/QuizApp/QuizApp.iOS/QuizApp.iOS.csproj.user

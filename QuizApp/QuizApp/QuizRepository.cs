@@ -28,9 +28,10 @@ namespace QuizApp
                     ));
 
                 dbConn = new SQLiteAsyncConnection(connectionFunc);
-                dbConn.CreateTableAsync<Quiz>();
-                dbConn.CreateTableAsync<User>();
-                dbConn.CreateTableAsync<Answer>();
+                //dbConn.CreateTableAsync<Quiz>();
+                //dbConn.CreateTableAsync<User>();
+                //dbConn.CreateTableAsync<Answer>();
+                dbConn.CreateTablesAsync<Quiz, User, Answer>();
             }
         }
 
